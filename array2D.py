@@ -1,6 +1,6 @@
 # Implementation of the Array2D ADT using an array of arrays
 
-from array import *
+from array import Array
 
 class Array2D:
 	# Creates a 2-D array of size numRows * numCols 
@@ -26,7 +26,7 @@ class Array2D:
 			self._theRows[i].clear(value)
 
 	# Gets the contents of the element at position [1, 1]
-	def __getitem__(self, ndxTuple)
+	def __getitem__(self, ndxTuple):
 		assert len(ndxTuple) == 2, "Invalid number of array subscripts."
 		row = ndxTuple[0]
 		col = ndxTuple[1]
@@ -36,7 +36,7 @@ class Array2D:
 		return self._theRows[row][col] # access and return 
 
 	# Sets the contents of the element at position [i, j] to value 
-	def __setitem__(self, ndxTuple, value)
+	def __setitem__(self, ndxTuple, value):
 		assert len(ndxTuple) == 2, "Invalid number of array subscripts."
 		row = ndxTuple[0]
 		col = ndxTuple[1]

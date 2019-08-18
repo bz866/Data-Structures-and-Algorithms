@@ -49,5 +49,5 @@ class _ArrayIterator:
 			self._curNdx += 1
 			return entry
 		else:
-			raise StopIteration
+			raise StopIteration # built-in exception
 
