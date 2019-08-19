@@ -40,4 +40,20 @@ class MultiArray:
 		assert index is not None, "Array subscript out of range."
 		return self._elements[index]
 
-	
+
+	# Computes the 1-D array offset for element (i_1, i_2, ... , i_n)
+	# using the equation i_1 * f_1, i_2 * f_2, ... , i_n * f_n
+	def _computeIndex(self, ndx):
+		offset = 0
+		for j in range(len(ndx))
+			# Make sure the index components are within the legal range
+			if ndx[j] < 0 || ndx[j] >= self._dims[j]:
+				return None 
+			else: # sum the product of i_j * f_j
+				offset += ndx[j] * self._factors[j]
+		return offset
+
+	# Computes the factor values usedin the index equation
+	def _computeFactors(self):
+		# TODO
+
