@@ -1,2 +1,6 @@
 # Data-Structures-and-Algorithms
-Scratch of data structures and algorithms in Python and C/C++ 
+Implementation of data structures and algorithms in Python and C/C++ from scratch
+
+# Goal
+- Personal practice
+- Modify to use in the future
