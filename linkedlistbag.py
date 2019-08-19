@@ -52,3 +52,19 @@ class _BagListNode(object):
 	def __init__(self, item):
 		self.item = item
 		self.next = None
+		
+# Defines a linked iterator for the Linked List Bag ADT
+class _LinkedListBagIterator:
+	def __init__(self, theHead):
+		self._curNode = theHead
+		
+	def __iter__(self):
+		return self
+	
+	def __next__(self):
+		if self._curNode is None:
+			raise StopIteration
+		else:
+			item = self._curNode.item
+			self._curNode = self._curNode.next
+			return item
