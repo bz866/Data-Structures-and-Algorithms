@@ -7,6 +7,8 @@
 # The algorithms keeps the list of sorted values at the front of the sequences and picks the next unsorted value from the first of those yet to be positioned
 # To position the next item, the corrent spot within the sequence of sorted values is found by performing a search
 # After finding the proper position, the slot has to be opened by shifting the items down one position
+# Time: O(n^2)
+# Space: O(1)
 
 import warnings
 
