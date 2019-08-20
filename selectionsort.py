@@ -7,8 +7,13 @@
 # Time: O(n^2)
 # Space: O(1) 
 
+import warnings
+
 # Implementation of the selection sort algorithm
 def selectionSort(theValues):
+	if len(theValues) == 0:
+		warnings.warn("User is sorting empty sequence.")
+		
 	n = len(theValues)
 	for i in range(0, n):
 		theSmallestNdx = i

@@ -8,8 +8,13 @@
 # - Spac: O(1)
 # - sorting done by swapping
 
+import warnings
+
 # implementation of the bubble sort algorithm
 def bubbleSort(theValues):
+	if len(theValues) == 0:
+		warnings.warn("User is sorting empty sequence.")
+
 	n = len(theValues)
 	for i in range(0, n - 1):
 		for j in range(0, n - i - 1):
