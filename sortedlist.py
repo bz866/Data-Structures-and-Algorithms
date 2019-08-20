@@ -69,18 +69,13 @@ class sortedList:
 		right = len(self._theElements) - 1 
 		while left <= right:
 			mid = (left + right) // 2
->>>>>>> ee1fcc5924ab2f2a8be729dcdc2a58aef5de4983
 			if self._theElements[mid] < target:
 				left = left + 1
 			elif self._theElements[mid] > target:
 				right = right - 1
 			else: # found 
 				return mid
-<<<<<<< HEAD
 
-		return left # index where the target value should be
-=======
-			
 		return left # index where the target should be to form a sorted list
 
 # An Iterator for sorted list ADT
@@ -99,4 +94,3 @@ class _SortedListIterator:
 			return entry
 		else:
 			raise StopIteration
->>>>>>> ee1fcc5924ab2f2a8be729dcdc2a58aef5de4983
