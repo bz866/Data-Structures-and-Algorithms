@@ -114,7 +114,8 @@ class SparseMatrix:
 						 
 	def __mul__(self, rhsMatrix):
 		assert self.numCols() == rhsMatrix.numRows() and \
-			   self.numRows() == rhsMatrix.numCols(), "Matrix sizes not compatable for multiplying."
+			self.numRows() == rhsMatrix.numCols(), "Matrix sizes not compatable for multiplying."
+			#TODO
 			
 
 # Storage class for creating matrix element nodes
