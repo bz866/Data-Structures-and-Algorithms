@@ -39,7 +39,40 @@ class Polynomial:
 	
 	# Polynomial addition: newPoly = self + rhsMatrix
 	def __add__(self, rhsPoly):
-		#TODO
+		assert self.degree() >= 0 and rhsPoly.degree() >= 0, \
+				"Addition only allowed on non-empty polynomials."
+		newPoly = Polynomial()
+		nodeA = self._termList
+		nodeB = rhsPoly._termList
+		
+		# Add corresponding terms until one list is empty
+		while nodeA is not None and nodeB is not None:
+			if nodeA.degree > nodeB.degree:
+				degree = nodeA.degree
+				value = nodeA.coefficient 
+				nodeA = nodeA.next
+			elif listA.degree < listB.degree:
+				degree = nodeB.degree
+				value = nodeB.coefficient
+				nodeB = nodeB.next
+			else:
+				degree = nodeA.degree
+				value = nodeA.coefficient + nodeB.coefficient
+				nodeA = nodeA.next
+				nodeB = nodeB.next
+			self._appendTerm(degree, value)
+			
+		# If self list contains more terms append them
+		while nodeA is not None:
+			self.appendTerm(nodeA.degree, nodeA.coefficient)
+			nodeA = nodeA.next
+		
+		# If rhs poly contains more terms append them
+		while nodeB is not None:
+			self._appendTerm(nodeB.degree, nodeB.degree)
+			nodeB = nodeB.next
+			
+		return newPoly
 		
 	# Polynomial substraction: newPoly = self - rhsPoly
 	def __sub__(self, rhsPoly):
@@ -47,7 +80,37 @@ class Polynomial:
 		
 	# Polynomial multiplication: newPoly = self * rhsPoly
 	def __mul__(self, rhsPoly):
-		#TODO
+		asert self.degree() >= 0 and rhsPoly.degree() >= 0, \
+				"Mutiplication only allowed on non-empty polynomials."
+		
+		# Create a new polynomial by multiplying rhsPoly by the first term
+		node = node.next
+		while node is not None:
+			tempPoly = rhsPoly._termMultiply(None)
+			newPoly = newPoly.add(tempPoly)
+			node = node.next
+			
+		return newPoly
+	
+	# Helper method for creating a new polynomial from multiplying an 
+	# existing polynomial by another term
+	def _termMultiply(self, termNode):
+		newPoly = Polynomial()
+		
+		# Iterate through the terms and compute the product of each term and 
+		# the term in term Node
+		curr = curr.next
+		while curr is not None:
+			# compute the product of the term
+			newDegree = curr.degree + termNode.degree
+			newCoeff = curr.coefficient * termNode.coefficient
+			
+			# Append it to the new polynomial
+			newPoly._appendTerm(newDegree, newCoeff)
+			
+			# Advance the current pointer
+			curr = curr.next
+		return newPoly
 	
 	# Helper method for appending terms to the polynomial
 	def _appendTerm(self, degree, coefficient):
