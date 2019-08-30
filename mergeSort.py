@@ -1,9 +1,18 @@
+from array import Array
+# the wrapper function for the new implementation of the merge sort algorithm
+def mergeSort(theList):
+	n = len(theList)
+	# Creates a temporary array for use when merging subsequence
+	tmpArray = Array(n)
+	# Call the private recursive merge sort function
+	recMergeSort(theList, 0, n-1, tmpArray)
+
 # Implementation of merge sort ‘
 # Sorts a virtual subsequence in ascending order using merge sort
 def recMergeSort(theSeq, first, last tmpArray):
 	# The elements that comprise the virtual subsequence are indicated by the [first ... last]. tmpArray is temporary storage used in the 
-	# merging phase of the merge sort algorithm 
-
+	# merging phase of the merge sort algorithm
+	
 	# Check the base case: the virtual sequence contains a single item
 	if first == last:
 		return;
