@@ -1,5 +1,5 @@
 # Data-Structures-and-Algorithms
-Implementation of data structures and algorithms in Python and C/C++ from scratch
+Implementation of data structures and algorithms in Python , C/C++, Java from scratch
 
 # Goal
 - Personal practice
