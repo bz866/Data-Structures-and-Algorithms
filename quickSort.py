@@ -1,7 +1,7 @@
 # Implementation of the quick sort algorithm
-def quickSort(theList):
-	left = 0
-	right = len(theList) - 1
+def quickSort(theList, left, right):
+	# left = 0
+	# right = len(theList) - 1
 
 	if left < right:
 		pi = partition(theList, left, right)
@@ -21,11 +21,12 @@ def partition(arr, left, right):
 			i += 1
 			arr[i], arr[j] = arr[j], arr[i]
 
-	arr[i+1], a[right] = a[right], arr[i+1]
+	arr[i+1], arr[right] = arr[right], arr[i+1]
 	return i + 1
 
 if __name__ == "__main__":
 
-	print(quickSort([1,5,8,2,50,3937,9,0,83,8]))
+	seq = [1,5,8,2,50,3937,9,0,83,8]
+	print(quickSort(seq, 0, len(seq)-1)
 
 	
