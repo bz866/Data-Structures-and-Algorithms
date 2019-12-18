@@ -27,6 +27,6 @@ def partition(arr, left, right):
 if __name__ == "__main__":
 
 	seq = [1,5,8,2,50,3937,9,0,83,8]
-	print(quickSort(seq, 0, len(seq)-1)
+	print(quickSort(seq, 0, len(seq)-1))
 
 	
