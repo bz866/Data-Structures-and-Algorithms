@@ -2,6 +2,8 @@
 # DP
 # In general, n eggs m floors 
 # f[n][m] = 1 + max(f[n-1][k-1], f[n][m-k]), k in [1, m-1]
+# Ref: https://www.cnblogs.com/grandyang/p/11048142.html
+# TLE optimization needed
 
 
 def countMinStep(numEggs, numFloors):
