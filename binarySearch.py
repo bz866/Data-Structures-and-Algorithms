@@ -47,8 +47,8 @@ def binaryInsert(arr, left, right, val):
 		else:
 			break
 
-	mid = (left + right) // 2 + 1
-	arr.insert(mid, val)
+	loc = (left + right) // 2 + 1
+	arr.insert(loc, val)
 	return arr
 
 if __name__ == "__main__":
