@@ -33,7 +33,7 @@ public:
     }
 };
 
-// inorder
+// inorder // right first, need reverse at the end
 class Solution {
 public:
     vector<int> inorderTraversal(TreeNode* root) {
@@ -59,6 +59,28 @@ public:
 
         return vector<int> (res.rbegin(), res.rend());
     
+    }
+};
+
+// inorder, left first, no need to reverse at the last
+class Solution {
+public:
+    vector<int> inorderTraversal(TreeNode* root) {
+        if (!root) return {};
+        vector<int> res;
+        stack<TreeNode*> stk;
+        TreeNode* node = root;
+        while (node || stk.size() > 0) {
+            while (node) {
+                stk.push(node);
+                node = node->left;
+            }
+            node = stk.top(); stk.pop();
+            res.push_back(node->val);
+            node = node->right;
+        }
+
+        return res;
     }
 };
 
